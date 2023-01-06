@@ -11,6 +11,8 @@ const storage = multer.diskStorage({
   })
 const upload = multer({ storage })
 const router = express.Router()
+
+// controller
 router.get('/page', (req,res) => {
     console.log(req)
     res.render('upload', { url: req.url })
