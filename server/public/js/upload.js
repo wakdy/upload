@@ -1,5 +1,6 @@
+
+
 export function upload() {
-    console.log(Math.random())
     const files = document.getElementById('file').files
     const formData = new FormData()
 
@@ -16,7 +17,4 @@ export function upload() {
     })
     xhr.open('POST', '/upload/action', true)
     xhr.send(formData)
-
-    
-
 }
