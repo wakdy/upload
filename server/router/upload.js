@@ -9,6 +9,8 @@ const storage = multer.diskStorage({
       cb(null, file.originalname)
     }
   })
+
+
 const upload = multer({ storage })
 const router = express.Router()
 
@@ -17,6 +19,8 @@ router.get('/page', (req,res) => {
     console.log(req)
     res.render('upload', { url: req.url })
 })
+
+// 接收上传文件
 router.post('/action', upload.array('file'), (req, res) => {
     console.log(req, 'req uplod action')
     console.log(req.body, 'req body')
